@@ -17,9 +17,9 @@ describe('task1 adding Election', () => {
   })
 
   describe('values of Election from the setup method of Controller ', () => {
-    let theElection
+    var theElection
     beforeEach(() => {
-      theElection = Controller.setupElection()
+      theElection = Controller.setup()
     })
 
     it('should have the correct name', () => {
@@ -34,7 +34,7 @@ describe('task1 adding Election', () => {
     describe('types of values of Election from the setup method of Controller ', () => {
       var theElection
       beforeEach(() => {
-        theElection = Controller.setupElection()
+        theElection = Controller.setup()
       })
 
       it('name should NOT have leading spaces', () => {
