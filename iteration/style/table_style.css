@@ -1,13 +1,9 @@
-
-.title {
-    width: 100%;
-    background-color: orange;
-}
-
 h1 {
+    padding: 60px;
     text-align: center;
     color: black;
     font-size: xx-large;
+    background-color: orangered;
 }
 
 h3 {
@@ -16,11 +12,10 @@ h3 {
 }
 
 table {
-    width :49.5%;
-    margin-left:.25%; 
-    margin-right:.25%;
+    width :100%;
     display: inline-table;
     font-size: larger;
+    color: blue;
 }
 
 table, th, td {

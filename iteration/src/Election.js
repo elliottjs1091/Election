@@ -10,7 +10,7 @@ class Election {
 	}
 
 	toString () {
-		return `<div class="title"><h1>${this.name} ${this.year}</h1></div>`;
+		return `<h1>${this.name} ${this.year}</h1>`;
 	}
 	
 	// ADD PARTY TO ELECTION
@@ -61,6 +61,7 @@ class Election {
 			return 0;
 		});
 	}
+
 	// ELECTORATE TABLE
 	electorateTable () {
 		this.sortElectorates();
@@ -70,45 +71,5 @@ class Election {
 		}
 		result += '</table>';
 		return result;
-	}
-}
-
-// ADD PARTY CLASS
-class Party { // eslint-disable-line no-unused-vars
-	constructor (partyName) {
-	  this.party = partyName;
-	}
-  
-	toString () {
-	  const result = `${this.party}`;
-	  return result;
-	}
-  
-	partyTableRow () {
-	  let result = '<tr>';
-	  result += `<td>${this.party}</td>`;
-	  result += '</tr>';
-	  return result;
-	}
-}
-
-// ADD ELECTORATE CLASS
-class Electorate { // eslint-disable-line no-unused-vars
-	constructor (electorateName,electorateParty) {
-	  this.name = electorateName;
-	  this.party = electorateParty;
-	}
-  
-	toString () {
-	  const result = `${this.name} ${this.party}`;
-	  return result;
-	}
-  
-	electorateTableRow () {
-	  let result = '<tr>';
-	  result += `<td>${this.party}</td>`;
-	  result += `<td>${this.name}</td>`;
-	  result += '</tr>';
-	  return result;
 	}
 }

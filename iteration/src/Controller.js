@@ -1,5 +1,7 @@
 class Controller  {
-	static setupElection () {
+	static setup () {
+		
+		// VARIABLES
 		var theElection = new Election()
 		theElection = new Election('New Zealand Election', 2023)
 		theElection.addParty('ACT New Zealand')
@@ -92,11 +94,5 @@ class Controller  {
 		theElection.addElectorate('Te Tai Tokerau', 'New Zealand Labour Party')
 		theElection.addElectorate('Te Tai Tonga', 'New Zealand Labour Party')
 		return theElection
-	}
-
-	static setupElectorate () {
-		var theElectorate = new Electorate();
-		theElectorate = new Electorate('Auckland Central','The New Zealand National Party');
-		return theElectorate
 	}
 }

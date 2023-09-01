@@ -1,6 +1,6 @@
 /* global describe beforeEach Controller it expect Electorate */
-describe('task5 adding Elecrorate', () => {
-    describe('Elecorate Properties', () => {
+describe('task5 adding Electorate', () => {
+    describe('Electorate Properties', () => {
         let theElectorate
         beforeEach(() => {
             theElectorate = new Electorate('Auckland Central', 'The New Zealand National Party')

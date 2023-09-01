@@ -1,52 +1,52 @@
 /* global describe beforeEach Controller it expect Election */
-describe('task1 adding Election', () => {
+describe('Task 1 - Adding Election -', () => {
   
-  describe('Election Properties', () => {
+  describe('Election properties -', () => {
     let theElection
     beforeEach(() => {
       theElection = new Election('New Zealand Election', 2023)
     })
 
-    it('should have a .name property', () => {
+    it('Should have a .name property', () => {
        expect(theElection.hasOwnProperty('name')).toBeTruthy()
     })
 
-    it('should have a .year property', () => {
+    it('Should have a .year property', () => {
       expect(theElection.hasOwnProperty('year')).toBeTruthy()
     })
   })
 
-  describe('values of Election from the setup method of Controller ', () => {
+  describe('Values of Election from the setup method of Controller -', () => {
     var theElection
     beforeEach(() => {
       theElection = Controller.setup()
     })
 
-    it('should have the correct name', () => {
+    it('Should have the correct name', () => {
       expect(theElection.name).toBe('New Zealand Election')
     })
 
-    it('should have the correct year', () => {
+    it('Should have the correct year', () => {
        expect(theElection.year).toBe(2023)
     })
   })
   
-    describe('types of values of Election from the setup method of Controller ', () => {
+    describe('Types of values of Election from the setup method of Controller -', () => {
       var theElection
       beforeEach(() => {
         theElection = Controller.setup()
       })
 
-      it('name should NOT have leading spaces', () => {
+      it('Name should NOT have leading spaces', () => {
         expect(theElection.name[0]).not.toBe(' ')
       })
       
-      it('name should NOT have trailing spaces', () => {
+      it('Name should NOT have trailing spaces', () => {
         expect(theElection.name[theElection.name.length-1]).not.toBe(' ')
       })
 
 
-      it('year should be a number', () => {
+      it('Year should be a number', () => {
          expect(typeof theElection.year).toBe('number')
       })
   })

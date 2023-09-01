@@ -13,20 +13,23 @@
 
   <!-- include source files here... -->
   <script src="src/Election.js"></script>
+  <script src="src/Party.js"></script>
+  <script src="src/Electorate.js"></script>
   <script src="src/Controller.js"></script>
 
   <script>
   var theElection
-  var theElectorate
 
   function main () {
-    let theElection = Controller.setupElection()
-    let theElectorate = Controller.setupElectorate()
-    console.log(theElection)
-    console.log(theElectorate)
+    let theElection = Controller.setup()
+    // let theParty = Controller.setupParty()
+    // let theElectorate = Controller.setupElectorate()
     print(theElection)
     print(theElection.partyTable())
     print(theElection.electorateTable())
+    console.log(theElection)
+    // console.log(theParty)
+    // console.log(theElectorate)
   }  
   
   window.onload = main
