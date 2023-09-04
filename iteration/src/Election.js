@@ -10,7 +10,7 @@ class Election {
 	}
 
 	toString () {
-		return `<h1>${this.name} ${this.year}</h1>`;
+		return `<h1 class=header>${this.name} ${this.year}</h1>`;
 	}
 	
 	// ADD PARTY TO ELECTION
@@ -32,10 +32,14 @@ class Election {
 		});
 	}
 
-	// PARTY TABLE
+	countParties () {
+		return `There are ${this.partyCount} parties.`
+	}
+
 	partyTable () {
 		this.sortParties();
-		let result = `<h3>Parties</h3><table>`;
+		let result = `<table><h3>Parties</h3>`;
+		// <p class=counter>${this.countParties()}</p>
 		for (const aParty of this.allParties) {
 			result += aParty.partyTableRow();
 		}
@@ -43,7 +47,6 @@ class Election {
 		return result;
 	}
 
-	// ADD ELECTORATES TO ELECTION
 	addElectorate (electorateName, electorateParty) {
 		const aNewElectorate = new Electorate(electorateName,electorateParty);
 		this.allElectorates.push(aNewElectorate);
@@ -62,10 +65,14 @@ class Election {
 		});
 	}
 
-	// ELECTORATE TABLE
+	countElectorates () {
+		return `There are ${this.electorateCount} electorates.`
+	}
+
 	electorateTable () {
 		this.sortElectorates();
-		let result = `<h3>Electorates</h3><table>`;
+		let result = `<table><h3>Electorates</h3>`;
+		// <p class=counter>${this.countElectorates()}</p>
 		for (const anElectorate of this.allElectorates) {
 			result += anElectorate.electorateTableRow();
 		}

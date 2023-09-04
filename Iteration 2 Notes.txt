@@ -1,0 +1,60 @@
+created 
+	specrunner test units
+		ElectorateSpecs.js
+		ElectorateTableArraySpec.js
+			created check for the name of last electorate and party
+			created check for count of electorates and parties in array.
+		PartySpec.js
+		PartyTableArraySpec.js
+			created check for the name of last of party
+			created check for count of parties in array
+		
+			these overall took 5 hours > typing and formatting
+	
+	
+	election methods because of specrunner check,also used it in the table head
+	 	countParties
+		countElectorates
+			this took <5 minutes
+
+removed
+	newline before and after heading of title
+		in View.js removed NEWLINE from print function
+			before > document.body.innerHTML += NEWLINE + newText
+			after > document.body.innerHTML += newText
+				this took 20 minutes to find
+
+changed
+	table text color to be blue inside table_style.css
+		added inside table{} > color: blue;
+			this took <5 minutes
+	
+	table border to be thicker
+		changed in table_style.css > border : blacksolid 3px;
+			this took <5 minutes
+	
+	aligned the 'vertical column' of the table to center
+		added a td style > width: 50%
+	
+	table heading with border removed
+		added a th style > border: 0px; > text-algin: center;
+
+# need to add into specrunner: 
+	check number of parties in election
+
++ solutions to problems were completely obvious in hindsight
+	a particular issue is writing code, then forgetting to rename one the variable
+		spotting that issue during debugging took longer than it should have
+
+
++ create sequence diagram
+	
++ update the class diagram
+
++ write up report
+	task estimations and actuals
+	evidence of unit testing and style check
+		
+
+			
+	

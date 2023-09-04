@@ -11,6 +11,6 @@ function out (newText) {
   document.body.innerHTML += newText
 }
 function print (newText) {
-  document.body.innerHTML += NEWLINE + newText
+  document.body.innerHTML += newText
 }
 

@@ -1,9 +1,9 @@
 class Controller  {
 	static setup () {
 		
-		// VARIABLES
-		var theElection = new Election()
-		theElection = new Election('New Zealand Election', 2023)
+		let theElection
+
+		theElection = new Election('New Zealand Election',2023)
 		theElection.addParty('ACT New Zealand')
 		theElection.addParty('Aotearoa Legalise Cannabis Party')
 		theElection.addParty('Heartland New Zealand Party')

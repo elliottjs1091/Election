@@ -5,8 +5,7 @@ class Party { // eslint-disable-line no-unused-vars
 	}
   
 	toString () {
-	  const result = `${this.party}`;
-	  return result;
+		return `${this.party}`;
 	}
 
 	partyTableRow () {
