@@ -1,12 +1,12 @@
 /* global describe it expect Party */
 describe('<<<<  PARTY  >>>>', () => {
   describe('PROPERTIES', () => {
-    var theParty
+    var theParty;
     beforeEach(() => {
-      theParty = new Party()
-    })
+      theParty = new Party();
+    });
     it('Should have a .party property', () => {
-      expect(theParty.hasOwnProperty('party')).toBeTruthy()
-    })
-  })
-})
+      expect(theParty.hasOwnProperty('party')).toBeTruthy();
+    });
+  });
+});

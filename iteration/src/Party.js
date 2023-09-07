@@ -1,5 +1,5 @@
 // ADD PARTY CLASS
-class Party { // eslint-disable-line no-unused-vars
+class Party {
 	constructor (partyName) {
 	  this.party = partyName;
 	}

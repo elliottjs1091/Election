@@ -44,7 +44,7 @@ changed
 
 + solutions to problems were completely obvious in hindsight
 	a particular issue is writing code, then forgetting to rename one the variable
-		spotting that issue during debugging took longer than it should have
+	small things were easily mistyped meaning spotting that issue during debugging took longer than it should have
 
 
 + create sequence diagram

@@ -1,4 +1,3 @@
-/* eslint-disable no-unused-vars */
 const BLANK = ''
 const SPACE = '&nbsp;'
 const TAB = '&nbsp;&nbsp;&nbsp;&nbsp;'

@@ -33,7 +33,7 @@ class Election {
 	}
 
 	countParties () {
-		return `There are ${this.partyCount} parties.`
+		return `There are ${this.partyCount} parties.`;
 	}
 
 	partyTable () {
@@ -66,7 +66,7 @@ class Election {
 	}
 
 	countElectorates () {
-		return `There are ${this.electorateCount} electorates.`
+		return `There are ${this.electorateCount} electorates.`;
 	}
 
 	electorateTable () {
