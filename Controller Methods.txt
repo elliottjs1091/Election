@@ -1,0 +1,8 @@
+ELECTION
+addParty(party,voteCount) 	// add vote count parameter
+addElectorate(electorate) 	// remove party parameter
+setWinningParty(electorate,winningParty) // new method
+setVotePercent(party,votePercent) 	// new method
+findElectorate(electorate) 		// new method
+addCandidate(candidate,party) 		// new method
+setCandidateVote(candidate,votecount) 	//new method

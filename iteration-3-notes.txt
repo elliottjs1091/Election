@@ -1,0 +1,18 @@
+write a function that takes an electorate name and winner as input
+
+- iterates through the this.allElectorates array
+	- appends the winning party to the electorate instance
+	
+
+what i did
+
+create a new instance of the electorate class with the necessary electorate winner attribute
+
+things to understand:
+-how code methods to set new attributes for the classes
+e.g. 
+a) setVotePercent(partyName,votePercent) => allParties(name,votePercent)
+b) setWinningParty(electorateName,electorateWinner) => allElectorates(name,winner)
+	theory:
+	-either create new instances or mutate the originals.
+	-

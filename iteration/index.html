@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>ELECTION 2023</title>
+  <title>NZ Election 2023</title>
   <link rel="stylesheet" type="text/css" href="style/TableStyle.css">
 </head>
 
@@ -13,18 +13,21 @@
 
   <!-- include source files here... -->
   <script src="src/Election.js"></script>
+  <script src="src/Controller.js"></script>
   <script src="src/Party.js"></script>
   <script src="src/Electorate.js"></script>
-  <script src="src/Controller.js"></script>
+  <script src="src/Candidate.js"></script>
 
   <script>
   var theElection
 
   function main () {
     let theElection = Controller.setup()
+    theElection.toString()
     print(theElection)
     print(theElection.partyTable())
     print(theElection.electorateTable())
+	
   }  
   
   window.onload = main

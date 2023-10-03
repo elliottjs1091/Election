@@ -1,7 +1,8 @@
-// ADD PARTY CLASS
 class Party {
-	constructor (partyName) {
+	constructor (partyName,partySeats,partyVotePercent) {
 	  this.party = partyName;
+	  this.seats = partySeats;
+	  this.votePercent = partyVotePercent;
 	}
   
 	toString () {
@@ -11,6 +12,8 @@ class Party {
 	partyTableRow () {
 		let result = '<tr>';
 		result += `<td>${this.party}</td>`;
+		result += `<td>${this.seats}</td>`
+		result += `<td>${this.votePercent}%</td>`
 		result += '</tr>';
 		return result;
 	}
