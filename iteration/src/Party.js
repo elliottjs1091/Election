@@ -9,11 +9,11 @@ class Party {
 		return `${this.party}`;
 	}
 
-	partyTableRow () {
+	partyTableRow () { // ADD PARTY TABLE DATA
 		let result = '<tr>';
-		result += `<td>${this.party}</td>`;
-		result += `<td>${this.seats}</td>`
-		result += `<td>${this.votePercent}%</td>`
+		result += `<td id=partyName>${this.party}</td>`;
+		result += `<td id=partySeats>${this.seats}</td>`;
+		result += `<td id=partyVotePercent>${this.votePercent}%</td>`;
 		result += '</tr>';
 		return result;
 	}

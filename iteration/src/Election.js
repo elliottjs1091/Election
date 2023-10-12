@@ -1,4 +1,3 @@
-// ELECTION CLASS
 class Election {
 	constructor (electionName, electionYear) {
 		this.name = electionName;
@@ -10,28 +9,51 @@ class Election {
 	}
 
 	toString () {
-		return `<h1 class=header>${this.name} ${this.year}</h1>`;
+		return `<table><th class=header>${this.name} ${this.year}</th></table>`;
 	}
 
-	//
-	// ADD ELECTORATE TO ELECTION
-	//
+	electionTable () {
+		this.sortPartyWinners()
+		var heading = ''
+		var newHeading = ''
 
-	addElectorate (electorateName) {
+		var partyResult = `<thead><table><tr><th>PARTIES</th><th>Seats</th><th>Vote%</th></tr></thead>`
+		for (var aParty of this.allParties) { // CREATE PARTY TABLE
+			partyResult += aParty.partyTableRow();
+		}
+		partyResult += '</table>';
+
+		var electorateResult = `<table><thead><tr><th>ELECTORATES</th><th>Winning Party</th></tr></thead>`;
+		for (var anElectorate of this.allElectorates) { // CREATE ELECTORATE TABLE
+			electorateResult += anElectorate.electorateTableRow();
+		}
+		electorateResult += '</table>';
+
+		var candidateResult = ''
+		for (var anElectorate of this.allElectorates) { // CREATE CANDIDATE TABLE
+			if (anElectorate.allCandidates.length > 0) {
+				heading = `${anElectorate.electorate}`
+				 // lol?
+				newHeading = `<table><thead><tr><th id=candidateHead>${heading} Candidates</th><th colspan="2",id=candidateHead>(Sorted by Vote)</th></tr></thead>`;
+				console.log(heading.toString())
+				for (var aCandidate of anElectorate.allCandidates) {
+					candidateResult += aCandidate.candidateTableRow()
+				}				
+			}
+		}	
+		candidateResult += '</table>';
+
+		return partyResult + electorateResult + newHeading + candidateResult
+	}
+
+	addElectorate (electorateName) { // ADD ELECTORATE TO ELECTION
 		const aNewElectorate = new Electorate(electorateName,this);
 		this.allElectorates.push(aNewElectorate);
 		this.electorateCount += 1;
+		this.sortElectorates();
 	}
 	
-	getElectorates () {
-		let result = ''
-		for (const anElectorate of this.allElectorates) {
-			result += anElectorate + '\n'
-			}
-		return result
-	}
-
-	sortElectorates () {
+	sortElectorates () { // SORT ELECTORATE ALPHABETICALLY
 		this.allElectorates.sort(function(a, b) {
 			if (a.electorate < b.electorate) {
 				return -1;
@@ -43,22 +65,9 @@ class Election {
 		});
 	}
 
-	electorateTable () {
-		this.sortElectorates();
-		let result = `<table><tr><th>ELECTORATES</th><th>Winning Party</th></tr>`;
-		for (const anElectorate of this.allElectorates) {
-			result += anElectorate.electorateTableRow();
-		}
-		result += '</table>';
-		return result;
-	}
-
 	setWinningParty (electorateName, electorateWinner) {
-		//add code
 		let result = this.findElectorate(electorateName)
 		result.winner = electorateWinner
-		console.log(result)
-		// this.allParties.sort(function(a,b) => (a.winner < b.winner) ? 1 : (a.winner>b.winner) ? -1 : 0)
 	}
 
 	findElectorate (targetElectorate) {
@@ -72,23 +81,11 @@ class Election {
 		}
 		return foundElectorate
 	}
-
-	//
-	// ADD PARTY TO ELECTION
-	//
-
-	addParty (partyName,partySeats) {
+	
+	addParty (partyName,partySeats) { // ADD PARTY TO ELECTION
 		const aNewParty = new Party(partyName,partySeats,this);
 		this.allParties.push(aNewParty);
 		this.partyCount += 1;
-	}
-	
-	getParty () {
-		let result = ''
-		for (const aParty of this.allParties) {
-			result += aParty + '\n'
-			}
-		return result
 	}
 	
 	findParty (targetParty) {
@@ -103,20 +100,7 @@ class Election {
 		return foundParty
 	}
 	
-	
-	// sortParties () {
-		// this.allParties.sort(function(a, b) {
-			// if (a.party < b.party) {
-				// return -1;
-			// }
-			// if (a.party > b.party) {
-				// return 1;
-			// }
-			// return 0;
-		// });
-	// }
-	
-	sortPartyWinners () {
+	sortPartyWinners () { // SORT BY VOTE % HIGH >> LOW
 		this.allParties.sort(function(a, b) {
 			if (a.votePercent > b.votePercent) {
 				return -1;
@@ -128,23 +112,48 @@ class Election {
 		});
 	}
 
-	partyTable () {
-		this.sortPartyWinners();
-		let result = `<table id="partytable"><tr><th>PARTIES</th><th>Seats</th><th>Vote%</th></tr>`;
-		for (const aParty of this.allParties) {
-			result += aParty.partyTableRow();
-		}
-		result += '</table>';
-		return result;
-	}
-
 	setVotePercent (partyName,partyVotePercent) {
 		// add code
 		let result = this.findParty(partyName)
 		result.votePercent = partyVotePercent
-		console.log(result)
-		
 	}
+
+	// getElectorates () {
+	// 	let result = ''
+	// 	for (const anElectorate of this.allElectorates) {
+	// 		result += anElectorate + '\n'
+	// 		}
+	// 	return result
+	// }
+
+	// sortParties () {
+	// 	this.allParties.sort(function(a, b) {
+	// 		if (a.party < b.party) {
+	// 			return -1;
+	// 		}
+	// 		if (a.party > b.party) {
+	// 			return 1;
+	// 		}
+	// 		return 0;
+	// 	});
+	// }
 	
+	// getParty () {
+	// 	let result = ''
+	// 	for (const aParty of this.allParties) {
+	// 		result += aParty + '\n'
+	// 		}
+	// 	return result
+	// }
+
+	// partyTable () {
+	// 	this.sortPartyWinners();
+	// 	let result = `<table id="partytable"><tr><th>PARTIES</th><th>Seats</th><th>Vote%</th></tr>`;
+	// 	for (const aParty of this.allParties) {
+	// 		result += aParty.partyTableRow();
+	// 	}
+	// 	result += '</table>';
+	// 	return result;
+	// }
 }
 

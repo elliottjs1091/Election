@@ -1,4 +1,4 @@
-class Electorate { // eslint-disable-line no-unused-vars
+class Electorate {
 	constructor (electorateName,electorateWinner) {
 	  this.electorate = electorateName;
       this.winner = electorateWinner;
@@ -10,7 +10,8 @@ class Electorate { // eslint-disable-line no-unused-vars
 	  return `${this.electorate}`;
 	}
 
-	electorateTableRow () {
+	electorateTableRow () { // ADD ELECTORATE TABLE DATA
+		this.sortCandidateVotes()
 		let result = '<tr>';
 		result += `<td>${this.electorate}</td>`;
 		result += `<td>${this.winner}</td>`
@@ -18,15 +19,11 @@ class Electorate { // eslint-disable-line no-unused-vars
 		return result;
 	}
 
-    //
-	// ADD CANDIDATE TO TABLE
-	//
-
-	addCandidate (candidateName,candidateParty) {
-		// add code
+	addCandidate (candidateName,candidateParty) { // ADD CANDIDATE TO TABLE
 		const aNewCandidate = new Candidate(candidateName,candidateParty,this);
 		this.allCandidates.push(aNewCandidate);
 		this.candidateCount += 1;
+		this.sortCandidateVotes()
 	}
 	
 	findCandidate(targetCandidate) {
@@ -41,7 +38,7 @@ class Electorate { // eslint-disable-line no-unused-vars
 		return foundCandidate
 	}
 	
-	sortCandidateVotes () {
+	sortCandidateVotes () { // SORT BY VOTE COUNT HIGH >> LOW
 		this.allCandidates.sort(function(a, b) {
 			if (a.votes > b.votes) {
 				return -1;
@@ -54,28 +51,18 @@ class Electorate { // eslint-disable-line no-unused-vars
 	}
 	
 	setCandidateVote (candidateName,candidateVotes) {
-        // add code
 		let result = this.findCandidate(candidateName)
 		result.votes = candidateVotes
-		console.log(result)
 	}
 	
-	candidateTable () {
-		// add code
-		this.sortCandidateVotes();
-		let result = `<table id="candidatetable"><tr><th>CANDIDATES</th><th>Party</th><th>Votes</th></tr>`;
-		for (const aCandidate of Electorate.allCandidates) {
-			result += aCandidate.candidateTableRow();
-		}
-		result += '</table>';
-		return result;
-    }
-	
-	getCandidates(electorateName) {
-		let result = ''
-		for (const anElectorate of this.allElectorates) {
-			result += anElectorate + '\n'
-			}
-		return result
-	}
+	// candidateTable () {
+	// 	// add code
+	// 	this.sortCandidateVotes();
+	// 	let result = `<table><tr><th>Name</th><th>(Sorted by Vote)</th></tr>`;
+	// 	for (const aCandidate of this.allCandidates) {
+	// 		result += aCandidate.candidateTableRow();
+	// 	}
+	// 	result += '</table>';
+	// 	return result;
+    // }
 }

@@ -1,7 +1,4 @@
-//				//
-//	 ELECTION	//
-//				//
-describe('<<<<<< ELECTION >>>>>>', () => {
+describe('<<<<<< ELECTION >>>>>>', () => { // ELECTION SPECIFCATIONS
 	
 	describe('PROPERTIES', () => {
 		let theElection;
@@ -16,8 +13,51 @@ describe('<<<<<< ELECTION >>>>>>', () => {
 		});
 	});
 	
+	describe('METHODS',() => {
+		let theElection;
+		beforeEach(() => {
+			theElection = new Election;
+		});
+
+		it('Should have .electionTable function', function () {
+			expect(typeof theElection.electionTable).toBe('function');
+		})
+
+		it('Should have .addElectorate function', function () {
+			expect(typeof theElection.addElectorate).toBe('function');
+		})
+
+		it('Should have .sortElectorates function', function () {
+			expect(typeof theElection.sortElectorates).toBe('function');
+		})
+
+		it('Should have .addParty function', function () {
+			expect(typeof theElection.addParty).toBe('function');
+		})
+
+		it('Should have .findParty function', function () {
+			expect(typeof theElection.findParty).toBe('function');
+		})
+
+		it('Should have .sortPartyWinners function', function () {
+			expect(typeof theElection.sortPartyWinners).toBe('function');
+		})
+
+		it('Should have .setWinningParty function', function () {
+			expect(typeof theElection.setWinningParty).toBe('function');
+		})
+
+		it('Should have .setVotePercent function', function () {
+			expect(typeof theElection.setVotePercent).toBe('function');
+		})
+
+		it('Should have .findElectorate function', function () {
+			expect(typeof theElection.findElectorate).toBe('function');
+		})
+	})
+	
 	describe('CONTROLLER SETUP VALUE', () => {
-		var theElection;
+		let theElection;
 		beforeEach(() => {
 			theElection = Controller.setup();
 		});
@@ -30,7 +70,7 @@ describe('<<<<<< ELECTION >>>>>>', () => {
 	});
 	
 	describe('CONTROLLER SETUP FORMATTING', () => {
-		var theElection;
+		let theElection;
 		beforeEach(() => {
 			theElection = Controller.setup();
 		});
@@ -44,15 +84,12 @@ describe('<<<<<< ELECTION >>>>>>', () => {
 			expect(typeof theElection.year).toBe('number');
 		});
 	});
+
 });
 
-//				//
-// 	  PARTY		//
-//				//
-
-describe('<<<<  PARTY  >>>>', () => {
+describe('<<<<  PARTY  >>>>', () => { // PARTY SPECIFCATIONS
 	describe('PROPERTIES', () => {
-	  var theParty;
+	  let theParty;
 	  beforeEach(() => {
 		theParty = new Party();
 	  });
@@ -66,6 +103,18 @@ describe('<<<<  PARTY  >>>>', () => {
 		expect(theParty.hasOwnProperty('votePercent')).toBeTruthy();
 	})
 	})
+
+	describe('METHODS', () => {
+		let theParty;
+		beforeEach(() => {
+		  theParty = new Party();
+		});
+		
+		it('Should have .partyTableRow function', function () {
+			expect(typeof theParty.partyTableRow).toBe('function');
+		})
+	});
+
 	describe('CONTROLLER DATA', () => {
 		var theElection;
 		beforeEach(() => {
@@ -102,16 +151,14 @@ describe('<<<<  PARTY  >>>>', () => {
             expect(aParty.party).toBe('New Zealand First Party');
             expect(aParty.seats).toEqual(0);
 			expect(aParty.votePercent).toEqual(2.7);
+	})
 
 	})
-	})
+	
 });
 
-//				//
-// 	ELECTORATE	//
-//				//
+describe('<<<<  ELECTORATE  >>>>', () => { // ELECTORATE SPECIFCATIONS
 
-describe('<<<<  ELECTORATE  >>>>', () => {
     describe('PROPERTIES', () => {
         let theElectorate;
         beforeEach(() => {
@@ -127,6 +174,34 @@ describe('<<<<  ELECTORATE  >>>>', () => {
             expect(theElectorate.hasOwnProperty('allCandidates')).toBeTruthy();
         });
     });
+
+	describe('METHODS', () => {
+		let theElectorate;
+		beforeEach(() => {
+		  theElectorate = new Electorate();
+		});
+		
+		it('Should have .electorateTableRow function', function () {
+			expect(typeof theElectorate.electorateTableRow).toBe('function');
+		})
+
+		it('Should have .addCandidate function', function () {
+			expect(typeof theElectorate.addCandidate).toBe('function');
+		})
+
+		it('Should have .findCandidate function', function () {
+			expect(typeof theElectorate.findCandidate).toBe('function');
+		})
+
+		it('Should have .findCandidate function', function () {
+			expect(typeof theElectorate.findCandidate).toBe('function');
+		})
+
+		it('Should have .setCandidateVote function', function () {
+			expect(typeof theElectorate.setCandidateVote).toBe('function');
+		})
+	});
+
 	describe('CONTROLLER DATA', () => {
 		var theElection;
 		beforeEach(() => {
@@ -166,11 +241,7 @@ describe('<<<<  ELECTORATE  >>>>', () => {
 	})
 });
 
-//				//
-// 	CANDIDATE	//
-//				//
-
-describe('<<<<  CANDIDATE  >>>>', () => {
+describe('<<<<  CANDIDATE  >>>>', () => { // CANDIDATE SPECIFCATIONS
 	describe('PROPERTIES', () => {
 	  var theCandidate;
 	  beforeEach(() => {
@@ -189,6 +260,18 @@ describe('<<<<  CANDIDATE  >>>>', () => {
 		expect(theCandidate.hasOwnProperty('electorate')).toBeTruthy();
 	  });
 	})
+
+	describe('METHODS', () => {
+		let theCandidate;
+		beforeEach(() => {
+		  theCandidate = new Candidate();
+		});
+		
+		it('Should have .candidateTableRow function', function () {
+			expect(typeof theCandidate.candidateTableRow).toBe('function');
+		})
+	});
+
 	describe('CONTROLLER DATA', () => {
 		var theElection
 		beforeEach(() => {

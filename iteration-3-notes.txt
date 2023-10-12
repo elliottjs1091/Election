@@ -9,10 +9,73 @@ what i did
 create a new instance of the electorate class with the necessary electorate winner attribute
 
 things to understand:
--how code methods to set new attributes for the classes
+#  how to sort the parties by seat or percentage
+e.g.
+
+#  how to code methods to 'set' the new attributes for the classes
 e.g. 
 a) setVotePercent(partyName,votePercent) => allParties(name,votePercent)
 b) setWinningParty(electorateName,electorateWinner) => allElectorates(name,winner)
 	theory:
 	-either create new instances or mutate the originals.
-	-
+	e.g.
+	a) map: what happened? looped attaching one party to all electorates. returns new array
+	b) ForEach: what happened? mutates the existing array instead of creating new
+	c) creating new instance of each electorate + winners, pushing to new array
+		-this one worked, but not sure if applicable to other set methods
+
+# pseudo A	
+map winners to electorate >> new array
+replace old array with new array after loop.
+
+# pseudo B
+input param (electorateName, electorateWinner)
+for each electorate in electorate array
+	if electorate name is equal the required electorate
+		append the winner of the electorate to electorate instance
+	do nothing
+
+pseudo C
+initialise constant. use find method and assign the desired electorate
+assign the new winning party to the constant winning party property. 
+	?? need to understand the difference between let and var scope.
+		- let is a global constant vs var is a local variable: python?
+
+!! pseudo C was the solution.
+
+# how to create full table for both party and election data.
+	mix the table width for vote% while keeping both center on the same vert line
+	theory:
+		-create unique identifiers between the tags
+
+# check validity of data in class properties
+	a) array
+	b) type - number - string - bool
+
+# class diagram
+
+# sequence diagram
+
+>> to do
+	- update class digram
+		^ finished updating properties/methods.
+		> need to update associations between classes
+		
+	- before and after evidence for tdd
+		> create duplicate and show the tests before the code is written
+		> screenshot the evidence
+
+	- create sequence diagram to reflect the program flow
+		> list out the relevant sequence of function calls
+		> create the sequence in tool
+		
+	- create the relevant unit tests
+		> check relevant functions exist
+		> string formatting -no trailing -proper cases
+		> no hardcoding
+		> checking property type
+
+	- ensure style compliance
+		> jshint, html
+		> screenshot evidence before and after
+>>

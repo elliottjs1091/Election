@@ -1,0 +1,11 @@
+goal
+plan
+analysis
+design
+coding
+testing
+time estimation for tasks
+figures
+unit testing
+expections v reality
+performance review
